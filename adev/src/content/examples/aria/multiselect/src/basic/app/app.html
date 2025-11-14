@@ -1,0 +1,25 @@
+<div ngCombobox readonly>
+  <div #origin class="multiselect-trigger">
+    <span class="multiselect-value">{{ displayValue() }}</span>
+    <input aria-label="Framework multiselect" placeholder="Select frameworks" ngComboboxInput />
+    <span class="multiselect-arrow">▼</span>
+  </div>
+
+  <ng-template
+    [cdkConnectedOverlay]="{origin, usePopover: 'inline', matchWidth: true}"
+    [cdkConnectedOverlayOpen]="true"
+  >
+    <ng-template ngComboboxPopupContainer>
+      <div class="multiselect-popup">
+        <div ngListbox multi>
+          @for (framework of frameworks; track framework) {
+            <div ngOption [value]="framework" class="option-with-check">
+              <span class="option-text">{{ framework }}</span>
+              <span class="option-check">✓</span>
+            </div>
+          }
+        </div>
+      </div>
+    </ng-template>
+  </ng-template>
+</div>

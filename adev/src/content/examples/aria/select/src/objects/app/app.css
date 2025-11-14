@@ -1,0 +1,77 @@
+.select-trigger {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 8px 12px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  cursor: pointer;
+  background: white;
+  min-height: 40px;
+}
+
+.select-trigger:focus-within {
+  outline: 2px solid blue;
+  border-color: blue;
+}
+
+.select-value {
+  flex: 1;
+}
+
+.select-arrow {
+  color: #666;
+  transition: transform 0.2s;
+  user-select: none;
+}
+
+[ngCombobox][data-expanded="true"] .select-arrow {
+  transform: rotate(180deg);
+}
+
+input[ngComboboxInput] {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  border-width: 0;
+}
+
+.select-popup {
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  background: white;
+  max-height: 300px;
+  overflow-y: auto;
+}
+
+[ngListbox] {
+  display: block;
+  padding: 4px 0;
+  margin: 0;
+  list-style: none;
+}
+
+[ngOption] {
+  padding: 8px 12px;
+  cursor: pointer;
+}
+
+[ngOption]:hover {
+  background: #f5f5f5;
+}
+
+[ngOption][aria-selected="true"] {
+  background: #e3f2fd;
+  color: #1976d2;
+}
+
+[ngOption][data-active="true"] {
+  outline: 2px solid blue;
+  outline-offset: -2px;
+}

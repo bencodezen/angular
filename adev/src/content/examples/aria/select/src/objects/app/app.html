@@ -1,0 +1,24 @@
+<div ngCombobox readonly>
+  <div #origin class="select-trigger">
+    <span class="select-value">{{ displayValue() }}</span>
+    <input aria-label="Country select" placeholder="Select a country" ngComboboxInput />
+    <span class="select-arrow">▼</span>
+  </div>
+
+  <ng-template
+    [cdkConnectedOverlay]="{origin, usePopover: 'inline', matchWidth: true}"
+    [cdkConnectedOverlayOpen]="true"
+  >
+    <ng-template ngComboboxPopupContainer>
+      <div class="select-popup">
+        <div ngListbox>
+          @for (country of countries; track country.code) {
+            <div ngOption [value]="country" [label]="country.name">
+              {{ country.name }}
+            </div>
+          }
+        </div>
+      </div>
+    </ng-template>
+  </ng-template>
+</div>

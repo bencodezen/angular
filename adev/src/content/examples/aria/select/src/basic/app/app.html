@@ -1,0 +1,24 @@
+<div ngCombobox readonly>
+  <div #origin class="select-trigger">
+    <span class="select-value">{{ displayValue() }}</span>
+    <input aria-label="Framework select" placeholder="Select a framework" ngComboboxInput />
+    <span class="select-arrow">▼</span>
+  </div>
+
+  <ng-template
+    [cdkConnectedOverlay]="{origin, usePopover: 'inline', matchWidth: true}"
+    [cdkConnectedOverlayOpen]="true"
+  >
+    <ng-template ngComboboxPopupContainer>
+      <div class="select-popup">
+        <div ngListbox>
+          @for (framework of frameworks; track framework) {
+            <div ngOption [value]="framework">
+              {{ framework }}
+            </div>
+          }
+        </div>
+      </div>
+    </ng-template>
+  </ng-template>
+</div>

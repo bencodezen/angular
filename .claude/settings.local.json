@@ -1,0 +1,15 @@
+{
+  "permissions": {
+    "allow": [
+      "Read(//Users/bencodezen/Projects/angular-components/src/aria/**)",
+      "Read(//Users/bencodezen/Projects/angular-components/docs/**)",
+      "Read(//Users/bencodezen/Projects/angular-components/**)",
+      "Bash(for component in accordion combobox deferred-content grid listbox menu radio-group tabs toolbar tree)",
+      "Bash(do echo \"=== $component ===\")",
+      "Bash(ls:*)",
+      "Bash(done)"
+    ],
+    "deny": [],
+    "ask": []
+  }
+}
